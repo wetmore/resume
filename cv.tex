@@ -3,6 +3,8 @@
 
 \documentclass[10pt, a4paper]{article}
 
+% Style derived from https://github.com/mrzool/cv-boilerplate
+
 % LAYOUT
 %--------------------------------
 % Margins
@@ -11,7 +13,7 @@
   letterpaper,
   left=33mm,
   right=15mm,
-  top=17mm,
+  top=15mm,
   bottom=15mm,
   marginparwidth=25mm,
   marginparsep=3mm
@@ -20,12 +22,7 @@
 % Do not indent paragraphs
 \setlength\parindent{0in}
 
-% Enable multicolumns
-\usepackage{multicol}
-\setlength{\columnsep}{-3.5cm}
-
 \pagenumbering{gobble}
-
 
 % TYPOGRAPHY
 %--------------------------------
@@ -110,22 +107,23 @@ Text}\selectfont\itshape\&}}
 %--------------------------------
 \begin{document}
 
-{\Huge Matthew Wetmore}
+{\Huge Matthew Wetmore}\\
 
-\begin{multicols}{2}
+\emph{%
+Generalist with a background in theory and a decade of experience
+creating interactive experiences. Detail-oriented and focused on building
+reliable, maintainable, and fast software. Passionate about making tools people
+love to use.
+}\\
 
-Glenside PA, 19038\\[.05cm]
-267 992 6013\\[.05cm]
-\href{mailto:wetmore.matt@gmail.com}{wetmore.matt@gmail.com}\\
+\setlength{\tabcolsep}{20pt}
+\renewcommand{\arraystretch}{1.2}
 
-\columnbreak
-\quad\\[.05cm]
-\href{https://mattwetmore.me}{mattwetmore.me}\\[.05cm]
-\href{https://github.com/wetmore}{github.com/wetmore}\\
-\end{multicols}
+\begin{tabular}{@{} l l l}
+Glenside PA, 19038 & 267 992 6013 & \href{https://mattwetmore.me}{mattwetmore.me} \\
+US Citizen & \href{mailto:wetmore.matt@gmail.com}{wetmore.matt@gmail.com} & \href{https://github.com/wetmore}{github.com/wetmore}\\
+\end{tabular}
 
-
-\vspace{-0.6cm}
 \section*{Work Experience}
 
 \subsection*{\textbf{Independent Contracting}}
@@ -225,7 +223,7 @@ the 2016 Olympics experience.
 
 \subsection*{\textbf{Technology Skills}}
 Javascript/ES6, Typescript, React, Vue, React Native, Python, Django, SQL,
-Haskell, Java, Rust, Unix, \LaTeX
+Haskell, Java, Rust, Unix, Git, \LaTeX
 
 \subsection*{\textbf{Activities}}
 \note{May 2018 - Mar 2020}
@@ -233,8 +231,8 @@ Converted a cargo van into a mobile home, and lived in it while traveling North
 America and rock climbing.
 
 \subsection*{\textbf{Interests}}
-Computer graphics, Generative art, Functional programming, Design, Rock
-climbing, Snowboarding
+Graphics, Generative art, Functional programming, Design, Rock
+climbing, Snowboarding, Woodworking
 
 \section*{Education}
 \note{\textbf{McGill University\\Montreal, QC}\\2010 - 2015}
