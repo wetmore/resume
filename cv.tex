@@ -1,0 +1,249 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{article}
+
+% LAYOUT
+%--------------------------------
+% Margins
+\usepackage{geometry} 
+\geometry{
+  letterpaper,
+  left=33mm,
+  right=15mm,
+  top=17mm,
+  bottom=15mm,
+  marginparwidth=25mm,
+  marginparsep=3mm
+}
+
+% Do not indent paragraphs
+\setlength\parindent{0in}
+
+% Enable multicolumns
+\usepackage{multicol}
+\setlength{\columnsep}{-3.5cm}
+
+\pagenumbering{gobble}
+
+
+% TYPOGRAPHY
+%--------------------------------
+\usepackage{fontspec} 
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+% converts LaTeX specials (quotes, dashes etc.) to Unicode
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text}
+
+% Cool ampersand
+\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler
+Text}\selectfont\itshape\&}}
+
+% Bodoni 72 Smallcaps Book
+
+% MARGIN NOTES
+%--------------------------------
+\usepackage{marginnote}
+\newcommand{\note}[1]{\marginnote{\raggedleft\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\reversemarginpar
+
+% HEADINGS
+%--------------------------------
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\rmfamily\mdseries} 
+\subsectionfont{\rmfamily\mdseries\normalsize}%\scshape\normalsize} 
+\subsubsectionfont{\rmfamily\mdseries\normalsize}%\upshape\normalsize}
+
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{5mm}{3mm}
+\titlespacing*{\subsection}
+{0pt}{3mm}{0.3mm}
+\titlespacing*{\subsubsection}
+{0pt}{2mm}{0.3mm}
+
+% LISTS
+%--------------------------------
+\usepackage{enumitem}
+\newlist{bullets}{enumerate}{1}
+\setlist[bullets,1]{
+  label=$\cdot$,
+  itemsep=0.2mm,
+  topsep=0.5mm,
+  leftmargin=4mm,
+  parsep=0.5mm,
+}
+
+% PDF SETUP
+%--------------------------------
+\usepackage{hyperref}
+\hypersetup
+{
+  pdfauthor={Matthew Wetmore},
+  pdfsubject={Matthew Wetmore's CV},
+  pdftitle={Matthew Wetmore's CV},
+  colorlinks, breaklinks, xetex, bookmarks,
+  filecolor=black,
+  urlcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  citecolor=[rgb]{0.117,0.682,0.858}
+}
+
+% OTHER
+%--------------------------------
+\newcommand{\middot}{$\:\:\cdot\:\:$}
+\newcommand{\loc}[1]{\textbf{#1}}
+
+% Separate args with mid dots
+\makeatletter
+\newcommand{\dotsep}[1]{%
+    #1\checknextarg}
+\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{}}
+\newcommand{\gobblenextarg}[1]{\middot #1\@ifnextchar\bgroup{\gobblenextarg}{}}
+
+% DOCUMENT
+%--------------------------------
+\begin{document}
+
+{\Huge Matthew Wetmore}
+
+\begin{multicols}{2}
+
+Glenside PA, 19038\\[.05cm]
+267 992 6013\\[.05cm]
+\href{mailto:wetmore.matt@gmail.com}{wetmore.matt@gmail.com}\\
+
+\columnbreak
+\quad\\[.05cm]
+\href{https://mattwetmore.me}{mattwetmore.me}\\[.05cm]
+\href{https://github.com/wetmore}{github.com/wetmore}\\
+\end{multicols}
+
+
+\vspace{-0.6cm}
+\section*{Work Experience}
+
+\subsection*{\textbf{Independent Contracting}}
+\subsubsection*{
+  \note{\loc{Remote}\\May 2020 - Jun 2020}
+  \dotsep
+  {\emph{Venga}}
+  {\href{https://www.gym.vengaclimb.com/}{vengaclimb.com}}
+  {\emph{Tools used:} React Native, Expo, GraphQL}}
+\begin{bullets}
+  \item Introduced user profiles and follow functionality to a mobile app for
+  climbing gym members.
+\end{bullets}
+
+\subsubsection*{
+  \note{\loc{Remote}\\Apr 2020}
+  \dotsep
+  {\emph{Safety in Numbers}}
+  {\href{https://safe7y.com/}{safe7y.com}}
+  {\emph{Tools used:} Django, Vue.js}
+}
+\begin{bullets}
+  \item Built custom web app for quick human-annotation of unstructured data
+  needed for machine learning.
+\end{bullets}
+
+\subsection*{\dotsep{\textbf{Google}}{Software Engineer}}
+
+\subsubsection*{
+  \note{\loc{New York, NY}\\Aug 2016 - Apr 2018}
+  \emph{Ephemeral Events}
+}
+\begin{bullets}
+  \item Developed new search result UI elements for events such as Fashion Week
+  (2016, 2017), the Academy Awards (2017), and the Winter Olympics (2018), and
+  generalized them for use in other events.
+
+  \item Designed and built a dashboard for monitoring traffic to team's
+  features, providing insights such as which events were most popular or which
+  queries were most popular for an event. This dashboard was essential to
+  scaling feature rollout from a few events to thousands of events.
+  
+  \item Architected the data model and log aggregation pipeline underlying the
+  dashboard. Gave particular care to ensuring the dashboard loaded quickly and
+  its data model was ergonomic for writing one-off queries.
+  
+  \item Implemented a live countdown UI which appeared on the results page for
+  upcoming events.
+  
+  \item Managed interns, and mentored new hires on other teams as part of
+  employee mentoring program.
+  
+  \item Represented company in on-campus recruitment efforts.
+\end{bullets}
+
+\subsubsection*{
+  \note{\loc{New York, NY}\\Sep 2015 - Sep 2016\\Summer 2014 (Intern)}
+  \emph{Knowledge Exploration}
+}
+\begin{bullets}
+  \item Introduced automatic support for right-to-left (RTL) languages to Oleo,
+  an internal framework for creating ``immersive'' (interactive, app-like)
+  search results.
+
+  \item Launched immersive results for TV/music/film queries in Arabic- and
+  Hebrew-speaking countries.
+
+  \item Maintained Oleo and added new features used for the Google Trips UI and 
+the 2016 Olympics experience.
+\end{bullets}
+
+\subsection*{
+  \note{\loc{Montreal, QC}\\May 2013 - May 2014}
+  \dotsep
+  {\textbf{Scheduling Direct}}
+  {Frontend Lead}
+  {\emph{Tools used:} Backbone.js}
+}
+\begin{bullets}
+  \item Architected and implemented the employee and manager user interfaces for
+  a shift-scheduling application.
+\end{bullets}
+
+\subsection*{
+  \note{\loc{New York, NY}\\Summer 2012}
+  \dotsep
+  {\textbf{Boxee}}
+  {Intern}
+  {\emph{Tools used:} D3.js, Backbone.js}
+}
+\begin{bullets}
+  \item Developed interactive social graph visualization tool, used to
+  analyze the growth of a new product.
+\end{bullets}
+
+\section*{Skills, Activities and Interests}
+
+\subsection*{\textbf{Technology Skills}}
+Javascript/ES6, Typescript, React, Vue, React Native, Python, Django, SQL,
+Haskell, Java, Rust, Unix, \LaTeX
+
+\subsection*{\textbf{Activities}}
+\note{May 2018 - Mar 2020}
+Converted a cargo van into a mobile home, and lived in it while traveling North
+America and rock climbing.
+
+\subsection*{\textbf{Interests}}
+Computer graphics, Generative art, Functional programming, Design, Rock
+climbing, Snowboarding
+
+\section*{Education}
+\note{\textbf{McGill University\\Montreal, QC}\\2010 - 2015}
+\subsection*{
+  \dotsep
+  {\textbf{B.Sc. (with Honours)} Mathematics \amper$\:$ Computer Science}
+  {\textbf{Minor} Physics}
+  {\textbf{GPA} $3.53$}
+}
+\emph{Favorite coursework:} Logic and Computation, Formal Verification,
+Algorithm Design, Topology, Real Analysis
+\end{document}
